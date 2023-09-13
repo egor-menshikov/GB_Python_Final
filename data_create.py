@@ -1,18 +1,15 @@
-def name_data():
-    name = input('Введите имя: ')
+from datetime import datetime
+
+
+def title_data():
+    name = input('Введите заголовок заметки: ')
     return name
 
 
-def surname_data():
-    surname = input('Введите фамилию: ')
+def body_data():
+    surname = input('Введите содержание заметки: ')
     return surname
 
 
-def phone_data():
-    phone = input('Введите телефон: ')
-    return phone
-
-
-def address_data():
-    address = input('Введите адрес: ')
-    return address
+def time_data():
+    return datetime.now().strftime("%Y/%m/%d, %H:%M:%S")

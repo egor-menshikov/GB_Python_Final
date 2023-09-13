@@ -1,4 +1,4 @@
-from notebook import input_data, print_data, edit_data, delete_data, search_data
+from notebook import input_data, print_data, edit_data, delete_data, search_data, print_note
 
 
 def print_menu():
@@ -7,17 +7,18 @@ def print_menu():
           '2. Удалить заметку\n'
           '3. Редактировать заметку\n'
           '4. Вывести все заметки\n'
-          '5. Поиск по заметкам\n'
-          '6. Выход')
+          '5. Вывести заметку\n'
+          '6. Поиск по заметкам\n'
+          '7. Выход')
 
 
 def interface():
     command = -1
-    while command != 6:
+    while command != 7:
         print_menu()
         command = int(input("Введите номер операции: "))
 
-        while command < 1 or command > 6:
+        while command < 1 or command > 7:
             print('Вы ошиблись при выборе.')
             command = int(input("Введите номер операции: "))
 
@@ -30,6 +31,8 @@ def interface():
         elif command == 4:
             print_data()
         elif command == 5:
-            search_data()
+            print_note()
         elif command == 6:
+            search_data()
+        elif command == 7:
             print("Всего доброго!")
