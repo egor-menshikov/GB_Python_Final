@@ -13,3 +13,8 @@ def body_data():
 
 def time_data():
     return datetime.now().strftime("%Y/%m/%d, %H:%M:%S")
+
+
+def date_data():
+    date_ = input('Введите дату в формате ГГГГ/ММ/ДД: ')
+    return date_

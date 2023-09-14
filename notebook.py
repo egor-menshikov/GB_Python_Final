@@ -1,4 +1,4 @@
-from data_create import title_data, body_data, time_data
+from data_create import title_data, body_data, time_data, date_data
 import json
 
 PATH = 'notebook.json'
@@ -19,6 +19,15 @@ def print_note():
     print(note_choice := input('Введите номер записи, которую вы хотите посмотреть: '))
     note = notebook[str(note_choice)]
     print(f'{note["title"]:<12}  {note["date_time"]:<16} \n{note["body"]}\n')
+
+
+def search_by_date():
+    with open(PATH, 'r', encoding='utf-8') as file:
+        notebook = json.load(file)
+    date_ = date_data()
+    for k, v in notebook.items():
+        if date_ in v['date_time']:
+            print(f'{v["title"]:<12}  {v["date_time"]:<16} \n{v["body"]}\n')
 
 
 def input_data():
