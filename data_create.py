@@ -17,4 +17,5 @@ def time_data():
 
 def date_data():
     date_ = input('Введите дату в формате ГГГГ/ММ/ДД: ')
+    print()
     return date_

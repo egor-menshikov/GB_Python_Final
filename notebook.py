@@ -17,6 +17,7 @@ def print_note():
     notebook = print_data()
     print()
     print(note_choice := input('Введите номер записи, которую вы хотите посмотреть: '))
+    print()
     note = notebook[str(note_choice)]
     print(f'{note["title"]:<12}  {note["date_time"]:<16} \n{note["body"]}\n')
 
@@ -90,14 +91,3 @@ def delete_data():
     notebook = {str(k): v for k, v in enumerate(note_list, 1)}
     with open(PATH, 'w', encoding='utf-8') as file:
         json.dump(notebook, file, ensure_ascii=False, indent="")
-
-
-def search_data():
-    with open(PATH, 'r', encoding='utf-8') as file:
-        notebook = json.load(file)
-    print(prompt := input('\nЧто вы хотите найти?\n-> ').casefold())
-    for k, v in notebook.items():
-        for value in v.values():
-            if prompt in value.casefold():
-                print(f'{k:^2} {v["name"]:<12} {v["surname"]:<14} {v["phone"]:<16} {v["address"]:<16}')
-                break

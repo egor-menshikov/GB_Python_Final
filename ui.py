@@ -1,4 +1,4 @@
-from notebook import input_data, print_data, edit_data, delete_data, search_data, print_note
+from notebook import input_data, print_data, edit_data, delete_data, print_note, search_by_date
 
 
 def print_menu():
@@ -7,8 +7,8 @@ def print_menu():
           '2. Удалить заметку\n'
           '3. Редактировать заметку\n'
           '4. Вывести все заметки\n'
-          '5. Вывести заметку\n'
-          '6. Поиск по заметкам\n'
+          '5. Вывести заметку по id\n'
+          '6. Поиск заметок по дате\n'
           '7. Выход')
 
 
@@ -33,6 +33,6 @@ def interface():
         elif command == 5:
             print_note()
         elif command == 6:
-            search_data()
+            search_by_date()
         elif command == 7:
             print("Всего доброго!")
